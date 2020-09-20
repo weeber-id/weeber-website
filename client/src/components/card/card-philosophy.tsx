@@ -14,6 +14,7 @@ const CardPhilosophy: React.FC<CardPhilosophy> = ({
 }) => {
   return (
     <div className="card-philosophy" {...otherProps}>
+      {/* @ts-ignore */}
       <Icon className="card-philosophy__icon" />
       <div className="gap" />
       <h3 className="heading-tertiary">{title}</h3>

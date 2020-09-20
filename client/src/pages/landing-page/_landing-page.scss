@@ -1,0 +1,118 @@
+.landing-page {
+  &__hero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10rem;
+    padding-top: 14rem;
+    align-items: center;
+
+    .heading-primary {
+      line-height: 1.4;
+      text-shadow: 0 4px 8px rgba(black, 0.25);
+    }
+
+    .paragraph {
+      font-size: 2.1rem;
+      width: 70%;
+    }
+
+    &-img-container {
+      justify-self: flex-end;
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    width: fit-content;
+  }
+
+  &__featured-work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10rem;
+
+    .heading-secondary {
+      position: relative;
+
+      &:before {
+        @include lineDecorator(-5px, 50%, 9.5rem, 2px);
+        transform: translateX(-50%);
+      }
+    }
+
+    &-img {
+      display: block;
+    }
+  }
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 10rem 10rem 10rem;
+
+  .heading-secondary {
+    position: relative;
+
+    &:before {
+      @include lineDecorator(-5px, 0, 7rem, 2px);
+    }
+  }
+
+  &__feature {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.services {
+  padding: 0 10rem 10rem 10rem;
+
+  .heading-secondary {
+    position: relative;
+
+    &::before {
+      @include lineDecorator(-5px, 0, 7rem, 2px);
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+.testimonies {
+  padding: 0 10rem 10rem 10rem;
+
+  .heading-secondary {
+    position: relative;
+
+    &:before {
+      @include lineDecorator(-5px, 0, 7rem, 2px);
+    }
+  }
+
+  &__swiper {
+    padding: 0 10rem;
+  }
+}
+
+.testimony {
+  text-align: center;
+
+  &__text {
+    color: var(--color-white);
+    font-size: 2rem;
+  }
+
+  &__name {
+    color: var(--color-dark-grey);
+    font-style: italic;
+  }
+}

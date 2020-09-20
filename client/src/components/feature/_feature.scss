@@ -1,0 +1,10 @@
+.feature {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 2rem;
+  align-items: center;
+
+  .paragraph {
+    color: var(--color-dark-grey);
+  }
+}

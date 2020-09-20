@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { LogoWeeberFull } from '../../assets';
 
 const Header: React.FC = () => {
@@ -7,7 +7,9 @@ const Header: React.FC = () => {
     <nav className="navbar">
       <div className="navbar__container max-width-1200">
         <div className="navbar__brand">
-          <LogoWeeberFull />
+          <Link to="/">
+            <LogoWeeberFull />
+          </Link>
         </div>
         <ul className="navbar__lists">
           <li className="navbar__item">
