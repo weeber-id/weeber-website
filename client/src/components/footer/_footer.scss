@@ -1,0 +1,54 @@
+.footer {
+  background-color: var(--color-black-2);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14rem;
+  height: 24.5rem;
+  position: relative;
+  align-items: center;
+
+  &:before {
+    @include lineDecorator(-3.2rem, 50%, 2px, 6.4rem);
+    transform: translateX(-50%);
+  }
+
+  .heading-secondary {
+    justify-self: center;
+  }
+
+  .btn {
+    justify-self: flex-start;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    justify-self: flex-end;
+  }
+
+  &__icon {
+    height: 3.2rem;
+    width: 3.2rem;
+    border-radius: 50%;
+    border: 2px solid var(--color-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-red);
+    }
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.copyright {
+  color: var(--color-white);
+  text-align: center;
+  font-weight: 700;
+  padding: 2rem 0;
+}

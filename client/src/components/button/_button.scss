@@ -1,0 +1,28 @@
+.btn {
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-white);
+  background-color: var(--color-red);
+  padding: 1rem 3rem;
+  cursor: pointer;
+  font-weight: 700;
+
+  &--outlined {
+    background-color: transparent;
+    border: 3px solid var(--color-red);
+
+    &:hover.btn {
+      background-color: var(--color-red);
+      color: var(--color-white);
+    }
+  }
+
+  &:hover {
+    background-color: var(--color-white);
+    color: var(--color-red);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
