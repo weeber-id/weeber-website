@@ -99,7 +99,23 @@
   }
 
   &__swiper {
-    padding: 0 10rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 3rem 100rem 3rem;
+    justify-content: center;
+  }
+
+  &__swiper-container {
+    padding: 0 5rem;
+  }
+
+  &__arrow {
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:active {
+      transform: scale(0.8);
+    }
   }
 }
 

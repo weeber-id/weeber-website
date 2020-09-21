@@ -8,3 +8,5 @@ export { ReactComponent as IconMobileResponsive } from './ic-mobile-responsive.s
 export { ReactComponent as IconPyramid } from './ic-pyramid.svg';
 export { ReactComponent as IconRocket } from './ic-rocket.svg';
 export { ReactComponent as IconSPA } from './ic-spa.svg';
+export { ReactComponent as IconArrowRight } from './ic-arrow-right.svg';
+export { ReactComponent as IconArrowLeft } from './ic-arrow-left.svg';

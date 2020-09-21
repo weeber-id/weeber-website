@@ -7,6 +7,14 @@
   cursor: pointer;
   font-weight: 700;
 
+  &--green {
+    background-color: var(--color-green);
+
+    &:hover.btn {
+      color: var(--color-green);
+    }
+  }
+
   &--outlined {
     background-color: transparent;
     border: 3px solid var(--color-red);

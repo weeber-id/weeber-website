@@ -1,5 +1,5 @@
-import React from 'react';
-import Swiper from 'react-id-swiper';
+import React, { useRef } from 'react';
+import Swiper, { SwiperRefNode } from 'react-id-swiper';
 import {
   ImgLandingHero,
   ImgLandingFeaturedWork,
@@ -9,29 +9,34 @@ import {
   IconPyramid,
   ImgCoreSrvWebApp,
   ImgCoreSrvWebDesign,
-  ImgCoreSrvTestingApp
+  ImgCoreSrvTestingApp,
+  IconArrowLeft,
+  IconArrowRight
 } from '../../assets';
 import { Button, Card, Feature, Footer, Header } from '../../components';
 
 const LandingPage = () => {
+  const swiperRef = useRef<SwiperRefNode>(null);
+
   const params = {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
     autoplay: {
       delay: 2500,
       disableOnInteraction: false
     },
     centeredSlides: true
   };
+
+  const nextSlide = () => {
+    swiperRef.current?.swiper?.slideNext();
+  };
+
+  const previousSlide = () => {
+    swiperRef.current?.swiper?.slidePrev();
+  };
+
   return (
     <>
       <Header />
@@ -85,7 +90,7 @@ const LandingPage = () => {
               className="features__feature"
               Icon={IconMobileResponsive}
               title="Mobile Responsive"
-              description="Mobile Responsive these days is must, every website have to provide this future, so do we."
+              description="Mobile Responsive these days is must, every website have to provide this feature, so do we."
             />
             <Feature
               className="features__feature"
@@ -121,33 +126,43 @@ const LandingPage = () => {
         <section className="testimonies">
           <h2 className="heading-secondary mb-5">What People Say About Us.</h2>
           <div className="testimonies__swiper">
-            <Swiper {...params}>
-              <div className="testimony">
-                <p className="testimony__text mb-3">
-                  People need to believe that there is a lot of solution to
-                  solve their problems and Weeber will make you believe that
-                  solving the problem is absolutely possible. Weeber can also
-                  create technology that able to help people and is most
-                  powerful when it empowers everyone.
-                </p>
-                <p className="testimony__name">
-                  -Akmal Luthfiansyah, President of BEM Vokasi UI 2020-
-                </p>
-              </div>
-              <div className="testimony">
-                <p className="testimony__text mb-3">
-                  Weeber has good service, especially when it comes to hearing
-                  complaints and customer requests. They can understand very
-                  well what the customer wants, and can also provide the right
-                  solution. Not only is it a go-to for creating websites, but
-                  also a consultant for those who need the best solution for
-                  their website.
-                </p>
-                <p className="testimony__name">
-                  -Ahmad Shiddiq, Entrepreneur Representative-
-                </p>
-              </div>
-            </Swiper>
+            <IconArrowLeft
+              onClick={previousSlide}
+              className="testimonies__arrow"
+            />
+            <div className="testimonies__swiper-container">
+              <Swiper ref={swiperRef} {...params}>
+                <div className="testimony">
+                  <p className="testimony__text mb-3">
+                    People need to believe that there is a lot of solution to
+                    solve their problems and Weeber will make you believe that
+                    solving the problem is absolutely possible. Weeber can also
+                    create technology that able to help people and is most
+                    powerful when it empowers everyone.
+                  </p>
+                  <p className="testimony__name">
+                    -Akmal Luthfiansyah, President of BEM Vokasi UI 2020-
+                  </p>
+                </div>
+                <div className="testimony">
+                  <p className="testimony__text mb-3">
+                    Weeber has good service, especially when it comes to hearing
+                    complaints and customer requests. They can understand very
+                    well what the customer wants, and can also provide the right
+                    solution. Not only is it a go-to for creating websites, but
+                    also a consultant for those who need the best solution for
+                    their website.
+                  </p>
+                  <p className="testimony__name">
+                    -Ahmad Shiddiq, Entrepreneur Representative-
+                  </p>
+                </div>
+              </Swiper>
+            </div>
+            <IconArrowRight
+              onClick={nextSlide}
+              className="testimonies__arrow"
+            />
           </div>
         </section>
       </main>

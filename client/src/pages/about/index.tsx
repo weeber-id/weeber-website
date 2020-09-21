@@ -15,7 +15,7 @@ const About: React.FC = () => {
     <>
       <Header />
       <section className="about__hero">
-        <h1 className="about__heading">Make It Happen .</h1>
+        <h1 className="about__heading">Make It Happen.</h1>
       </section>
       <section className="about__desc">
         <div className="about__desc-container">
