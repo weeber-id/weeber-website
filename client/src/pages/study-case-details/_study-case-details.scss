@@ -1,0 +1,74 @@
+.case-details {
+  .hero {
+    overflow: hidden;
+    min-height: 70rem;
+
+    &__container {
+      padding: 15rem 10rem 0rem 10rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .heading-secondary {
+        position: relative;
+
+        &:before {
+          @include lineDecorator(-5px, 0, 7rem, 2px);
+        }
+      }
+    }
+
+    &__label {
+      color: var(--color-dark-grey);
+      font-weight: 700;
+      letter-spacing: 3px;
+      display: block;
+    }
+
+    &__preview {
+      position: relative;
+    }
+
+    &__preview-img {
+      position: absolute;
+      left: 10rem;
+      top: 0;
+      z-index: 5;
+    }
+  }
+}
+
+.summary {
+  background-color: var(--color-black-2);
+  margin-top: -17rem;
+
+  &__container {
+    padding: 10rem;
+  }
+
+  &__details {
+    padding-left: 2.5rem;
+    border-left: 2px solid var(--color-red);
+    max-width: 80rem;
+  }
+}
+
+.deliver-tech {
+  &__container {
+    padding: 5rem 10rem 10rem 10rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+
+  &__lists {
+    padding-left: 1.2rem;
+  }
+
+  &__list {
+    color: var(--color-dark-grey);
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

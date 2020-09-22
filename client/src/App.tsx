@@ -1,8 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { About, HireUs, LandingPage } from './pages';
+import {
+  About,
+  HireUs,
+  LandingPage,
+  StudyCase,
+  StudyCaseDetails
+} from './pages';
 import 'swiper/swiper.scss';
-import StudyCase from './pages/study-case';
 function App() {
   return (
     <div className="App">
@@ -10,6 +15,7 @@ function App() {
       <Route path="/hire-us" exact component={HireUs} />
       <Route path="/about" exact component={About} />
       <Route path="/works" exact component={StudyCase} />
+      <Route path="/works/:id" exact component={StudyCaseDetails} />
     </div>
   );
 }

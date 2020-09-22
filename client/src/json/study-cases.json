@@ -1,0 +1,27 @@
+[
+  {
+    "id": "vokasi-connect",
+    "heading": "Help College Students, <br /> Connect with College Student Board.",
+    "client_logo_path": "logo-vokasi-connect.png",
+    "client_preview_path": "case-vokasi-connect.png",
+    "summary": "Vokasi Connect is a platform initiated by BEM Vokasi UI 2020. It helps the Vocational Students at Universitas Indonesia to give their aspirations in terms of academics, sexual abuse, financial issues, mental health, and facility issues on the campus.",
+    "site_url": "https://vokasiconnect.id",
+    "deliverables": [
+      "Responsive Web Design",
+      "Content Management System",
+      "Search Engine Optimization",
+      "Support and Maintanance",
+      "Dashboard Admin User Interface"
+    ],
+    "technologies": [
+      "Figma",
+      "React JS",
+      "Docker",
+      "Flask Framework",
+      "MySQL",
+      "Python",
+      "Sass",
+      "HTML5"
+    ]
+  }
+]

@@ -11,6 +11,7 @@ import ImgCoreSrvWebApp from './core-srv-web-app.png';
 import ImgCoreSrvWebDesign from './core-srv-web-design.png';
 import ImgWorkVokasiConnect from './work-vokasi-connect.png';
 import ImgWorkTelukJambe from './work-teluk-jambe.png';
+import ImgCaseVokasiConnect from './case-vokasi-connect.png';
 
 export {
   ImgAboutHero,
@@ -25,5 +26,6 @@ export {
   ImgCoreSrvWebDesign,
   ImgCoreSrvWebApp,
   ImgWorkVokasiConnect,
-  ImgWorkTelukJambe
+  ImgWorkTelukJambe,
+  ImgCaseVokasiConnect
 };
