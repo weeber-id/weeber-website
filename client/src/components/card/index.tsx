@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from '../button';
 import CardPhilosophy from './card-philosophy';
+import CardWork from './card-work';
 
 export interface Card extends React.HTMLAttributes<HTMLDivElement> {
-  type?: 'philosophy' | 'service';
+  type?: 'philosophy' | 'service' | 'work';
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>> & {
     title?: string | undefined;
   };
@@ -11,12 +12,32 @@ export interface Card extends React.HTMLAttributes<HTMLDivElement> {
   description?: string;
   img?: string;
   alt?: string;
+  platform?: string;
 }
 
-const Card: React.FC<Card> = ({ type, Icon, description, title, img, alt }) => {
+const Card: React.FC<Card> = ({
+  type,
+  Icon,
+  description,
+  title,
+  img,
+  alt,
+  platform
+}) => {
   if (type === 'philosophy') {
     return (
       <CardPhilosophy Icon={Icon} title={title} description={description} />
+    );
+  }
+
+  if (type === 'work') {
+    return (
+      <CardWork
+        title={title}
+        description={description}
+        img={img}
+        platform={platform}
+      />
     );
   }
 

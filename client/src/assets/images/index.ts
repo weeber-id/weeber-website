@@ -9,6 +9,8 @@ import ImgLandingFeaturedWork from './landing-featured-work.png';
 import ImgCoreSrvTestingApp from './core-srv-testing-app.png';
 import ImgCoreSrvWebApp from './core-srv-web-app.png';
 import ImgCoreSrvWebDesign from './core-srv-web-design.png';
+import ImgWorkVokasiConnect from './work-vokasi-connect.png';
+import ImgWorkTelukJambe from './work-teluk-jambe.png';
 
 export {
   ImgAboutHero,
@@ -21,5 +23,7 @@ export {
   ImgLandingFeaturedWork,
   ImgCoreSrvTestingApp,
   ImgCoreSrvWebDesign,
-  ImgCoreSrvWebApp
+  ImgCoreSrvWebApp,
+  ImgWorkVokasiConnect,
+  ImgWorkTelukJambe
 };

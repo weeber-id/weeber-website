@@ -1,0 +1,17 @@
+.study-case {
+  .hero {
+    padding: 15rem 10rem 10rem 5rem;
+    text-align: center;
+
+    .paragraph {
+      font-size: 2rem;
+    }
+  }
+
+  .cards {
+    padding: 5rem 10rem 10rem 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 4rem 6rem;
+  }
+}
