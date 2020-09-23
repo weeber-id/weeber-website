@@ -11,7 +11,9 @@ import {
   ImgCoreSrvWebDesign,
   ImgCoreSrvTestingApp,
   IconArrowLeft,
-  IconArrowRight
+  IconArrowRight,
+  ImgLandingNextLevelOne,
+  ImgLandingNextLevelTwo
 } from '../../assets';
 import { Button, Card, Feature, Footer, Header } from '../../components';
 
@@ -51,8 +53,10 @@ const LandingPage = () => {
               website application.
             </p>
             <div className="landing-page__buttons">
-              <Button>Work With Us</Button>
-              <Button color="white">View Our Works</Button>
+              <Button url="/hire-us">Work With Us</Button>
+              <Button url="/works" color="white">
+                View Our Works
+              </Button>
             </div>
           </div>
           <div className="landing-page__hero-img-container">
@@ -66,10 +70,23 @@ const LandingPage = () => {
             src={ImgLandingFeaturedWork}
             alt="Weeber Featured Work"
           />
-          <Button variant="outlined">See Study Case</Button>
+          <Button url="/works/vokasi-connect" variant="outlined">
+            See Study Case
+          </Button>
         </section>
         <section className="features">
-          <div className="features__images"></div>
+          <div className="features__images">
+            <img
+              src={ImgLandingNextLevelOne}
+              alt="Laptop Code"
+              className="features__image features__image--1"
+            />
+            <img
+              src={ImgLandingNextLevelTwo}
+              alt="Laptop Code"
+              className="features__image features__image--2"
+            />
+          </div>
           <div className="features__features">
             <h2 className="heading-secondary mb-2">
               Bring Your Website To The Next Level.
@@ -108,18 +125,21 @@ const LandingPage = () => {
               title="Web App Development"
               description="Design, Develop, Deploy your app right away, and we will help the process since the beginning."
               img={ImgCoreSrvWebApp}
+              url="/hire-us"
             />
             <Card
               type="service"
               title="Website Design"
               description="Need website design that catchy? Or simple company website using wordpress or webflow which are easy to maintenance? This service should be perfect fit for you."
               img={ImgCoreSrvWebDesign}
+              url="/hire-us"
             />
             <Card
               type="service"
               title="Testing Application "
               description="Good app is app that solve user problems, testing will make sure your user get what they really needed the most. And we will cover this difficult job for you."
               img={ImgCoreSrvTestingApp}
+              url="/hire-us"
             />
           </div>
         </section>

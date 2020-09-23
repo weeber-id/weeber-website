@@ -1,3 +1,4 @@
+import { url } from 'inspector';
 import React from 'react';
 import Button from '../button';
 import CardPhilosophy from './card-philosophy';
@@ -13,6 +14,8 @@ export interface Card extends React.HTMLAttributes<HTMLDivElement> {
   img?: string;
   alt?: string;
   platform?: string;
+  url?: string;
+  isComingSoon?: boolean;
 }
 
 const Card: React.FC<Card> = ({
@@ -22,6 +25,8 @@ const Card: React.FC<Card> = ({
   title,
   img,
   alt,
+  url,
+  isComingSoon,
   platform
 }) => {
   if (type === 'philosophy') {
@@ -33,10 +38,12 @@ const Card: React.FC<Card> = ({
   if (type === 'work') {
     return (
       <CardWork
+        url={url}
         title={title}
         description={description}
         img={img}
         platform={platform}
+        isComingSoon={isComingSoon}
       />
     );
   }
@@ -49,7 +56,7 @@ const Card: React.FC<Card> = ({
       <div className="card__details">
         <h3 className="heading-tertiary">{title}</h3>
         <p className="paragraph">{description}</p>
-        <Button color="green" variant="outlined">
+        <Button url={url} color="green" variant="outlined">
           Contact Us
         </Button>
       </div>

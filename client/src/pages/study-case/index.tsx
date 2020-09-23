@@ -20,6 +20,7 @@ const StudyCase = () => {
               platform="Website"
               title="Vokasi Connect"
               description="Vokasi Connect is a platform initiated by BEM Vokasi UI 2020. It helps the Vocational Students at Universitas Indonesia to give their aspirations in terms of academics, sexual abuse, financial issues, mental health, and facility issues on the campus."
+              url="/works/vokasi-connect"
             />
             <Card
               type="work"
@@ -28,6 +29,7 @@ const StudyCase = () => {
               platform="Coming Soon"
               title="Bina Desa"
               description="One-stop Platform for Teluk Jambe Village Public Administration."
+              isComingSoon
             />
           </section>
         </div>

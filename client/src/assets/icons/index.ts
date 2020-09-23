@@ -10,3 +10,4 @@ export { ReactComponent as IconRocket } from './ic-rocket.svg';
 export { ReactComponent as IconSPA } from './ic-spa.svg';
 export { ReactComponent as IconArrowRight } from './ic-arrow-right.svg';
 export { ReactComponent as IconArrowLeft } from './ic-arrow-left.svg';
+export { ReactComponent as IconLinkedIn } from './ic-linkedin.svg';

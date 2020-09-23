@@ -9,6 +9,8 @@ const CardWork: React.FC<Card> = ({
   className,
   img,
   alt,
+  url,
+  isComingSoon,
   ...otherProps
 }) => {
   const cardWorkClassName = ['card-work'];
@@ -25,8 +27,8 @@ const CardWork: React.FC<Card> = ({
         <div className="card-work__description">{description}</div>
       </div>
       <div className="card-work__button-container">
-        <Button variant="outlined" color="green">
-          See Study Case
+        <Button url={url} variant="outlined" color="green">
+          {isComingSoon ? 'Coming Soon' : 'See Study Case'}
         </Button>
       </div>
     </div>

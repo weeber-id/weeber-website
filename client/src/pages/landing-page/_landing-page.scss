@@ -67,6 +67,25 @@
       margin-bottom: 2rem;
     }
   }
+
+  &__images {
+    position: relative;
+  }
+
+  &__image {
+    position: absolute;
+
+    &--1 {
+      left: 5rem;
+      top: 12rem;
+      z-index: 5;
+    }
+
+    &--2 {
+      left: 0;
+      top: 22rem;
+    }
+  }
 }
 
 .services {

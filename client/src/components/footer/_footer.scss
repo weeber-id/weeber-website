@@ -39,7 +39,9 @@
     &:hover {
       background-color: var(--color-red);
     }
+  }
 
+  &__link {
     &:not(:last-child) {
       margin-right: 1rem;
     }

@@ -69,7 +69,9 @@ const StudyCaseDetails = () => {
             <h2 className="heading-tertiary mb-3">Summary</h2>
             <div className="summary__details">
               <p className="paragraph mb-3">{state.summary}</p>
-              <Button variant="outlined">Visit Site</Button>
+              <Button url={state.site_url} isExternal variant="outlined">
+                Visit Site
+              </Button>
             </div>
           </div>
         </section>

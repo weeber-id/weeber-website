@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, useLocation } from 'react-router-dom';
 import {
   About,
   HireUs,
@@ -9,6 +9,12 @@ import {
 } from './pages';
 import 'swiper/swiper.scss';
 function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [pathname]);
+
   return (
     <div className="App">
       <Route path="/" exact component={LandingPage} />
