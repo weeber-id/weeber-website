@@ -6,6 +6,7 @@ interface Button extends React.HTMLAttributes<HTMLButtonElement> {
   color?: 'red' | 'white' | 'green';
   isExternal?: boolean;
   url?: string;
+  onClick?(e: React.MouseEvent<HTMLElement, MouseEvent>): void;
 }
 
 const Button: React.FC<Button> = ({
@@ -30,6 +31,9 @@ const Button: React.FC<Button> = ({
         target="_blank"
         className={btnClassName.join(' ')}
         href={url}
+        onClick={(e: React.MouseEvent<HTMLElement, MouseEvent>) =>
+          otherProps.onClick && otherProps.onClick(e)
+        }
       >
         {children}
       </a>
@@ -38,7 +42,13 @@ const Button: React.FC<Button> = ({
 
   if (url) {
     return (
-      <Link className={btnClassName.join(' ')} to={url}>
+      <Link
+        onClick={(e: React.MouseEvent<HTMLElement, MouseEvent>) =>
+          otherProps.onClick && otherProps.onClick(e)
+        }
+        className={btnClassName.join(' ')}
+        to={url}
+      >
         {children}
       </Link>
     );

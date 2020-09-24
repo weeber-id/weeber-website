@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactPixel from 'react-facebook-pixel';
+import ReactGA from 'react-ga';
+
 import { Button, Footer, Header, Input, TextArea } from '../../components';
 
 interface HireUsState {
@@ -24,6 +27,10 @@ const HireUs = () => {
     hearAboutWeeber: ''
   });
 
+  useEffect(() => {
+    ReactPixel.track('Contact');
+  }, []);
+
   const handleChange = (
     event:
       | React.ChangeEvent<HTMLInputElement>
@@ -34,6 +41,20 @@ const HireUs = () => {
     setState({
       ...state,
       [name]: value
+    });
+  };
+
+  const handleSubmit = (
+    e:
+      | React.MouseEvent<HTMLElement, MouseEvent>
+      | React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    ReactPixel.track('Lead');
+    ReactGA.event({
+      action: 'Hire for project',
+      category: 'Client'
     });
   };
 
@@ -51,7 +72,7 @@ const HireUs = () => {
         </section>
         <section className="form">
           <div className="form__container max-width-1200">
-            <form className="consultation">
+            <form onSubmit={handleSubmit} className="consultation">
               <Input
                 value={state.projectName}
                 onChange={handleChange}
@@ -160,7 +181,9 @@ const HireUs = () => {
                 label="How did you hear about weeber?"
                 name="hearAboutWeeber"
               />
-              <Button color="green">Submit</Button>
+              <Button onClick={handleSubmit} color="green">
+                Submit
+              </Button>
             </form>
           </div>
         </section>

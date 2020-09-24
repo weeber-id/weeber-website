@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga';
+import ReactPixel from 'react-facebook-pixel';
 import {
   About,
   HireUs,
@@ -9,11 +11,22 @@ import {
   StudyCaseDetails
 } from './pages';
 import 'swiper/swiper.scss';
+
 function App() {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    ReactPixel.init('1123787818016659', undefined, {
+      autoConfig: true,
+      debug: false
+    });
+    ReactGA.initialize('UA-140487384-2', { debug: false });
+  }, []);
+
+  useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    ReactPixel.pageView();
+    ReactGA.pageview(pathname);
   }, [pathname]);
 
   return (

@@ -15,6 +15,7 @@ export interface Card extends React.HTMLAttributes<HTMLDivElement> {
   platform?: string;
   url?: string;
   isComingSoon?: boolean;
+  onButtonClick?(e: React.MouseEvent<HTMLElement, MouseEvent>): void;
 }
 
 const Card: React.FC<Card> = ({
@@ -26,6 +27,7 @@ const Card: React.FC<Card> = ({
   alt,
   url,
   isComingSoon,
+  onButtonClick,
   platform
 }) => {
   if (type === 'philosophy') {
@@ -55,7 +57,12 @@ const Card: React.FC<Card> = ({
       <div className="card__details">
         <h3 className="heading-tertiary">{title}</h3>
         <p className="paragraph">{description}</p>
-        <Button url={url} color="green" variant="outlined">
+        <Button
+          onClick={onButtonClick}
+          url={url}
+          color="green"
+          variant="outlined"
+        >
           Contact Us
         </Button>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPixel from 'react-facebook-pixel';
 import { IconInstagram, IconLinkedIn, IconWhatsapp } from '../../assets';
 import Button from '../button';
 
@@ -14,6 +15,9 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="footer__link"
+            onClick={() =>
+              ReactPixel.track('SocmedView', { socmed: 'instagram' })
+            }
           >
             <div className="footer__icon">
               <IconInstagram />
@@ -24,6 +28,9 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="footer__link"
+            onClick={() =>
+              ReactPixel.track('SocmedView', { socmed: 'whatsapp' })
+            }
           >
             <div className="footer__icon">
               <IconWhatsapp />
@@ -34,6 +41,9 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="footer__link"
+            onClick={() =>
+              ReactPixel.track('SocmedView', { socmed: 'linkedin' })
+            }
           >
             <div className="footer__icon">
               <IconLinkedIn />
