@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { Button, Footer, Header } from '../../components';
 import StudyCases from '../../json/study-cases.json';
 
@@ -30,12 +30,17 @@ const StudyCaseDetails = () => {
     client_preview_path: ''
   });
   const { id } = useParams<StudyCaseRouteParam>();
+  const history = useHistory();
   const studyCases: StudyCasesData[] = StudyCases;
   useEffect(() => {
     const data = studyCases.find((studyCase) => studyCase.id === id)!;
 
-    if (data) setState({ ...data });
-  }, [id, studyCases]);
+    if (data) {
+      setState({ ...data });
+    } else {
+      history.replace('/not-found');
+    }
+  }, [id, studyCases, history]);
 
   return (
     <>

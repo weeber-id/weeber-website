@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  IconFacebook,
-  IconInstagram,
-  IconLinkedIn,
-  IconWhatsapp
-} from '../../assets';
+import { IconInstagram, IconLinkedIn, IconWhatsapp } from '../../assets';
 import Button from '../button';
 
 const Footer = () => {

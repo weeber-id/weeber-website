@@ -1,4 +1,3 @@
-import { url } from 'inspector';
 import React from 'react';
 import Button from '../button';
 import CardPhilosophy from './card-philosophy';

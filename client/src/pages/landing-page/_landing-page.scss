@@ -2,9 +2,23 @@
   &__hero {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
     padding: 10rem;
     padding-top: 14rem;
     align-items: center;
+
+    @media only screen and (max-width: 64em) {
+      grid-template-columns: 3fr 2fr;
+    }
+
+    @media only screen and (max-width: 56.25em) {
+      grid-template-columns: 1fr;
+      padding: 14rem 5rem 5rem 5rem;
+    }
+
+    @media only screen and (max-width: 25em) {
+      padding: 14rem 3rem 5rem 3rem;
+    }
 
     .heading-primary {
       line-height: 1.4;
@@ -14,18 +28,34 @@
     .paragraph {
       font-size: 2.1rem;
       width: 70%;
+
+      @media only screen and (max-width: 64em) {
+        font-size: 1.8rem;
+      }
+
+      @media only screen and (max-width: 25em) {
+        font-size: 1.6rem;
+        width: 100%;
+      }
     }
 
     &-img-container {
       justify-self: flex-end;
+
+      img {
+        width: 100%;
+
+        @media only screen and (max-width: 56.25em) {
+          display: none;
+        }
+      }
     }
   }
 
   &__buttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 20rem));
     gap: 3rem;
-    width: fit-content;
   }
 
   &__featured-work {
@@ -45,6 +75,11 @@
 
     &-img {
       display: block;
+      width: 60%;
+
+      @media only screen and (max-width: 31.25em) {
+        width: 70%;
+      }
     }
   }
 }
@@ -54,8 +89,26 @@
   grid-template-columns: repeat(2, 1fr);
   padding: 0 10rem 10rem 10rem;
 
+  @media only screen and (max-width: 56.25em) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40rem 1fr;
+    padding: 0 5rem 5rem 5rem;
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    grid-template-rows: 27rem 1fr;
+  }
+
+  @media only screen and (max-width: 25em) {
+    padding: 0 3rem 7rem 3rem;
+  }
+
   .heading-secondary {
     position: relative;
+
+    @media only screen and (max-width: 31.25em) {
+      margin-bottom: 3rem;
+    }
 
     &:before {
       @include lineDecorator(-5px, 0, 7rem, 2px);
@@ -63,8 +116,16 @@
   }
 
   &__feature {
+    @media only screen and (max-width: 31.25em) {
+      align-items: flex-start;
+    }
+
     &:not(:last-child) {
       margin-bottom: 2rem;
+
+      @media only screen and (max-width: 31.25em) {
+        margin-bottom: 3rem;
+      }
     }
   }
 
@@ -75,21 +136,45 @@
   &__image {
     position: absolute;
 
+    @media only screen and (max-width: 31.25em) {
+      width: 70%;
+    }
+
     &--1 {
       left: 5rem;
       top: 12rem;
       z-index: 5;
+
+      @media only screen and (max-width: 56.25em) {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+      }
     }
 
     &--2 {
       left: 0;
       top: 22rem;
+
+      @media only screen and (max-width: 56.25em) {
+        left: 40%;
+        transform: translateX(-50%);
+        top: 4rem;
+      }
     }
   }
 }
 
 .services {
   padding: 0 10rem 10rem 10rem;
+
+  @media only screen and (max-width: 56.25em) {
+    padding: 0 5rem 8rem 5rem;
+  }
+
+  @media only screen and (max-width: 25em) {
+    padding: 0 3rem 8rem 3rem;
+  }
 
   .heading-secondary {
     position: relative;
@@ -102,12 +187,16 @@
   &__cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 2.5rem;
+    gap: 4rem 2.5rem;
   }
 }
 
 .testimonies {
   padding: 0 10rem 10rem 10rem;
+
+  @media only screen and (max-width: 56.25em) {
+    padding: 0 5rem 5rem 5rem;
+  }
 
   .heading-secondary {
     position: relative;
@@ -122,10 +211,26 @@
     align-items: center;
     grid-template-columns: 3rem 100rem 3rem;
     justify-content: center;
+
+    @media only screen and (max-width: 56.25em) {
+      grid-template-columns: 3rem 50rem 3rem;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      grid-template-columns: 3rem 37rem 3rem;
+    }
+
+    @media only screen and (max-width: 31.25em) {
+      grid-template-columns: 3rem 25rem 3rem;
+    }
   }
 
   &__swiper-container {
     padding: 0 5rem;
+
+    @media only screen and (max-width: 25em) {
+      padding: 0 2rem;
+    }
   }
 
   &__arrow {

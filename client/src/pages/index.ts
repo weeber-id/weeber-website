@@ -3,5 +3,6 @@ import LandingPage from './landing-page';
 import HireUs from './hire-us';
 import StudyCaseDetails from './study-case-details';
 import StudyCase from './study-case';
+import NotFound from './not-found';
 
-export { About, LandingPage, HireUs, StudyCaseDetails, StudyCase };
+export { About, LandingPage, HireUs, StudyCaseDetails, StudyCase, NotFound };

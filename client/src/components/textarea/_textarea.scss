@@ -1,6 +1,7 @@
 .textarea {
   display: grid;
-  grid-template-rows: 5rem 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
 
   &__label {
     font-size: 1.8rem;

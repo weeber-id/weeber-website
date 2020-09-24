@@ -3,6 +3,14 @@
     padding: 15rem 10rem 10rem 5rem;
     text-align: center;
 
+    @media only screen and (max-width: 56.25em) {
+      padding: 14rem 5rem 5rem 5rem;
+    }
+
+    @media only screen and (max-width: 25em) {
+      padding: 14rem 3rem 5rem 3rem;
+    }
+
     .paragraph {
       font-size: 2rem;
     }
@@ -11,7 +19,15 @@
   .cards {
     padding: 5rem 10rem 10rem 10rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
     gap: 4rem 6rem;
+
+    @media only screen and (max-width: 56.25em) {
+      padding: 5rem;
+    }
+
+    @media only screen and (max-width: 25em) {
+      padding: 5rem 3rem 5rem 3rem;
+    }
   }
 }

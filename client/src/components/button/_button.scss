@@ -8,6 +8,11 @@
   font-weight: 700;
   text-decoration: none;
   text-align: center;
+  white-space: nowrap;
+
+  @media only screen and (max-width: 25em) {
+    font-size: 1.6rem;
+  }
 
   &--green {
     background-color: var(--color-green);

@@ -8,8 +8,33 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
 
+      @media only screen and (max-width: 56.25em) {
+        padding: 14rem 5rem 5rem 5rem;
+      }
+
+      @media only screen and (max-width: 31.25em) {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      @media only screen and (max-width: 25em) {
+        padding: 14rem 3rem 5rem 3rem;
+      }
+
       .heading-secondary {
         position: relative;
+
+        @media only screen and (max-width: 56.25em) {
+          font-size: 3rem;
+        }
+
+        @media only screen and (max-width: 31.25em) {
+          max-width: 30rem;
+        }
+
+        @media only screen and (max-width: 25em) {
+          max-width: 25rem;
+        }
 
         &:before {
           @include lineDecorator(-5px, 0, 7rem, 2px);
@@ -33,6 +58,17 @@
       left: 10rem;
       top: 0;
       z-index: 5;
+      box-shadow: 0 4px 4px rgba(black, 0.25);
+
+      @media only screen and (max-width: 56.25em) {
+        width: 50rem;
+      }
+
+      @media only screen and (max-width: 31.25em) {
+        width: 40rem;
+        position: relative;
+        left: 5rem;
+      }
     }
   }
 }
@@ -41,8 +77,20 @@
   background-color: var(--color-black-2);
   margin-top: -17rem;
 
+  @media only screen and (max-width: 31.25em) {
+    margin-top: -10rem;
+  }
+
   &__container {
     padding: 10rem;
+
+    @media only screen and (max-width: 56.25em) {
+      padding: 10rem 5rem;
+    }
+
+    @media only screen and (max-width: 25em) {
+      padding: 10rem 3rem;
+    }
   }
 
   &__details {
@@ -56,8 +104,16 @@
   &__container {
     padding: 5rem 10rem 10rem 10rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 5rem;
+
+    @media only screen and (max-width: 56.25em) {
+      padding: 5rem 5rem 10rem 5rem;
+    }
+
+    @media only screen and (max-width: 25em) {
+      padding: 5rem 3rem 10rem 3rem;
+    }
   }
 
   &__lists {

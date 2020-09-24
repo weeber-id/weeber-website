@@ -14,6 +14,15 @@
     text-shadow: 0 4px 8px rgba(black, 0.25);
     color: white;
     position: relative;
+    white-space: nowrap;
+
+    @media only screen and (max-width: 37.5em) {
+      font-size: 5rem;
+    }
+
+    @media only screen and (max-width: 31.25em) {
+      font-size: 4rem;
+    }
 
     &::before {
       position: absolute;
@@ -26,6 +35,10 @@
       border-top: 1rem solid var(--color-white);
       border-left: 1rem solid var(--color-white);
       border-right: 1rem solid var(--color-white);
+
+      @media only screen and (max-width: 37.5em) {
+        width: 15rem;
+      }
     }
 
     &::after {
@@ -39,6 +52,11 @@
       border-bottom: 1rem solid var(--color-white);
       border-left: 1rem solid var(--color-white);
       border-right: 1rem solid var(--color-white);
+
+      @media only screen and (max-width: 37.5em) {
+        top: 7rem;
+        width: 15rem;
+      }
     }
   }
 
@@ -52,6 +70,23 @@
     position: relative;
     z-index: 10;
     box-shadow: 0 4px 8px rgba(black, 0.25);
+
+    @media only screen and (max-width: 56.25em) {
+      grid-template-columns: 1fr;
+      max-width: 60rem;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      max-width: 50rem;
+    }
+
+    @media only screen and (max-width: 31.25em) {
+      max-width: 35rem;
+    }
+
+    @media only screen and (max-width: 25em) {
+      max-width: 30rem;
+    }
   }
 
   &__desc-img {
@@ -60,10 +95,18 @@
     background: url('../../assets/images/about-description.png');
     background-size: cover;
     background-position: center;
+
+    @media only screen and (max-width: 56.25em) {
+      display: none;
+    }
   }
 
   &__description {
     padding: 5rem;
+
+    @media only screen and (max-width: 31.25em) {
+      padding: 3rem;
+    }
 
     .paragraph {
       padding-left: 3.5rem;
@@ -89,6 +132,14 @@
   &__philosophy-container {
     padding: 0 10rem;
 
+    @media only screen and (max-width: 56.25em) {
+      padding: 0 5rem;
+    }
+
+    @media only screen and (max-width: 31.25em) {
+      padding: 0 3rem;
+    }
+
     & > .heading-secondary {
       position: relative;
       &::before {
@@ -99,8 +150,7 @@
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 3rem;
   }
 
@@ -109,6 +159,14 @@
 
     &-container {
       padding: 0 10rem;
+
+      @media only screen and (max-width: 56.25em) {
+        padding: 0 5rem;
+      }
+
+      @media only screen and (max-width: 31.25em) {
+        padding: 0 3rem;
+      }
     }
 
     .heading-secondary {

@@ -7,6 +7,14 @@
   position: relative;
   align-items: center;
 
+  @media only screen and (max-width: 56.25em) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4rem 0;
+    padding-top: 6rem;
+    height: auto;
+  }
+
   &:before {
     @include lineDecorator(-3.2rem, 50%, 2px, 6.4rem);
     transform: translateX(-50%);
@@ -14,16 +22,27 @@
 
   .heading-secondary {
     justify-self: center;
+    line-height: 1;
   }
 
   .btn {
     justify-self: flex-start;
+
+    @media only screen and (max-width: 56.25em) {
+      justify-self: center;
+      grid-row: 2 / 3;
+    }
   }
 
   &__icons {
     display: flex;
     align-items: center;
     justify-self: flex-end;
+
+    @media only screen and (max-width: 56.25em) {
+      justify-self: center;
+      grid-row: 3 / 4;
+    }
   }
 
   &__icon {

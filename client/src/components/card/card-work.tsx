@@ -14,6 +14,7 @@ const CardWork: React.FC<Card> = ({
   ...otherProps
 }) => {
   const cardWorkClassName = ['card-work'];
+
   if (className) cardWorkClassName.push(className);
 
   return (
