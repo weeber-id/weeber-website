@@ -126,6 +126,7 @@ const LandingPage = () => {
               description="Design, Develop, Deploy your app right away, and we will help the process since the beginning."
               img={ImgCoreSrvWebApp}
               url="/hire-us"
+              alt="Code Editor"
             />
             <Card
               type="service"
@@ -133,13 +134,15 @@ const LandingPage = () => {
               description="Need website design that catchy? Or simple company website using wordpress or webflow which are easy to maintenance? This service should be perfect fit for you."
               img={ImgCoreSrvWebDesign}
               url="/hire-us"
+              alt="Mobile App Design"
             />
             <Card
               type="service"
-              title="Testing Application "
-              description="Good app is app that solve user problems, testing will make sure your user get what they really needed the most. And we will cover this difficult job for you."
+              title="MVP Builder"
+              description="Good app is an app that solve user problems, MVP will make sure your app fit in the market. This process will reduce your cost and bring your app to the market quickly."
               img={ImgCoreSrvTestingApp}
               url="/hire-us"
+              alt="Laptops"
             />
           </div>
         </section>
