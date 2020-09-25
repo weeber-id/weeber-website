@@ -15,7 +15,14 @@ import {
   ImgLandingNextLevelOne,
   ImgLandingNextLevelTwo
 } from '../../assets';
-import { Button, Card, Feature, Footer, Header } from '../../components';
+import {
+  Button,
+  Card,
+  Feature,
+  Footer,
+  Header,
+  ImageWrapper
+} from '../../components';
 
 const LandingPage = () => {
   const swiperRef = useRef<SwiperRefNode>(null);
@@ -60,12 +67,12 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="landing-page__hero-img-container">
-            <img src={ImgLandingHero} alt="Weeber Agency Hero" />
+            <ImageWrapper src={ImgLandingHero} alt="Weeber Agency Hero" />
           </div>
         </section>
         <section className="landing-page__featured-work">
           <h2 className="heading-secondary mb-5">Featured Work</h2>
-          <img
+          <ImageWrapper
             className="landing-page__featured-work-img mb-5"
             src={ImgLandingFeaturedWork}
             alt="Weeber Featured Work"
@@ -76,12 +83,12 @@ const LandingPage = () => {
         </section>
         <section className="features">
           <div className="features__images">
-            <img
+            <ImageWrapper
               src={ImgLandingNextLevelOne}
               alt="Laptop Code"
               className="features__image features__image--1"
             />
-            <img
+            <ImageWrapper
               src={ImgLandingNextLevelTwo}
               alt="Laptop Code"
               className="features__image features__image--2"

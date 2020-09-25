@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useHistory, useParams } from 'react-router-dom';
-import { Button, Footer, Header } from '../../components';
+import { Button, Footer, Header, ImageWrapper } from '../../components';
 import StudyCases from '../../json/study-cases.json';
 
 interface StudyCaseRouteParam {
@@ -78,17 +78,18 @@ const StudyCaseDetails = () => {
                 className="heading-secondary mb-3"
               />
               <span className="hero__label mb-1">CLIENT</span>
-              <img
+              <ImageWrapper
                 src={require(`../../assets/logos/${state.client_logo_path}`)}
                 alt="vokasi connect website"
                 className="hero__client-logo"
               />
             </div>
             <div className="hero__preview">
-              <img
+              <ImageWrapper
                 src={require(`../../assets/images/${state.client_preview_path}`)}
                 alt="vokasi connect website"
                 className="hero__preview-img"
+                unsetWidth
               />
             </div>
           </div>

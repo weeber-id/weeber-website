@@ -1,0 +1,9 @@
+.img-wrapper {
+  &__img {
+    width: 100%;
+
+    &--unset {
+      width: unset;
+    }
+  }
+}
