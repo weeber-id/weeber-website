@@ -29,7 +29,7 @@ const CardWork: React.FC<Card> = ({
       </div>
       <div className="card-work__button-container">
         <Button url={url} variant="outlined" color="green">
-          {isComingSoon ? 'Coming Soon' : 'See Study Case'}
+          {isComingSoon ? 'Coming Soon' : 'See Case Study'}
         </Button>
       </div>
     </div>

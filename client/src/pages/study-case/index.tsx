@@ -1,10 +1,36 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { ImgWorkTelukJambe, ImgWorkVokasiConnect } from '../../assets';
 import { Card, Footer, Header } from '../../components';
 
 const StudyCase = () => {
   return (
     <>
+      <Helmet>
+        <link rel="canonical" href="https://weeber.id/works" />
+        <title>Weeber - Explore Our Work With a List of Our Case Studies</title>
+        <meta
+          name="description"
+          content="See a few examples of our work in product design, web application development, and more."
+        />
+        <meta
+          name="keywords"
+          content="Web Design, Web Development, UI UX Design, Android Development, Full-Stack Developer"
+        />
+        <meta name="author" content="Weeber Indonesia" />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:image"
+          content="https://storages.weeber.id/public/assets/weeber-id.png"
+        />
+        <meta
+          property="og:description"
+          content="See a few examples of our work in product design, web application development, and more."
+        />
+        <meta property="og:site_name" content="Weeber Indonesia" />
+        <meta property="og:url" content="https://weeber.id/works" />
+      </Helmet>
+      <Header />
       <Header />
       <main className="study-case">
         <div className="max-width-1200 study-case__container">

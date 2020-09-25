@@ -71,7 +71,7 @@ const LandingPage = () => {
             alt="Weeber Featured Work"
           />
           <Button url="/works/vokasi-connect" variant="outlined">
-            See Study Case
+            See Case Study
           </Button>
         </section>
         <section className="features">

@@ -11,6 +11,7 @@ import {
   StudyCaseDetails
 } from './pages';
 import 'swiper/swiper.scss';
+import { Helmet } from 'react-helmet';
 
 function App() {
   const { pathname } = useLocation();
@@ -31,6 +32,31 @@ function App() {
 
   return (
     <div className="App">
+      <Helmet>
+        <title>
+          Weeber Indonesia | Custom Software Development & Design Company
+        </title>
+        <meta
+          name="description"
+          content="Design & Engineering Studio that have specialization in build a world class web application. We can help you bring your product to life - whether it's a Minimum Viable Product, UX/UI Services or Custom Software Development to scale your company."
+        />
+        <meta
+          name="keywords"
+          content="Web Design, Web Development, UI UX Design, Android Development, Full-Stack Developer"
+        />
+        <meta name="author" content="Weeber Indonesia" />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:image"
+          content="https://storages.weeber.id/public/assets/weeber-id.png"
+        />
+        <meta
+          property="og:description"
+          content="Design & Engineering Studio that have specialization in build a world class web application. We have expert designers and developers."
+        />
+        <meta property="og:site_name" content="Weeber Indonesia" />
+        <meta property="og:url" content="https://weeber.id/" />
+      </Helmet>
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/hire-us" exact component={HireUs} />

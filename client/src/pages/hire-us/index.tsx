@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactPixel from 'react-facebook-pixel';
 import ReactGA from 'react-ga';
+import { Helmet } from 'react-helmet';
 
 import { Button, Footer, Header, Input, TextArea } from '../../components';
 
@@ -60,6 +61,30 @@ const HireUs = () => {
 
   return (
     <>
+      <Helmet>
+        <link rel="canonical" href="https://weeber.id/hire-us" />
+        <title>Start a project With Weeber</title>
+        <meta
+          name="description"
+          content="Fill in a few details to get in-touch with one of our local designers or developers. They’ll help you build great software."
+        />
+        <meta
+          name="keywords"
+          content="Web Design, Web Development, UI UX Design, Android Development, Full-Stack Developer"
+        />
+        <meta name="author" content="Weeber Indonesia" />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:image"
+          content="https://storages.weeber.id/public/assets/weeber-id.png"
+        />
+        <meta
+          property="og:description"
+          content="Fill in a few details to get in-touch with one of our local designers or developers. They’ll help you build great software."
+        />
+        <meta property="og:site_name" content="Weeber Indonesia" />
+        <meta property="og:url" content="https://weeber.id/hire-us" />
+      </Helmet>
       <Header />
       <main className="hire-us">
         <section className="hero">

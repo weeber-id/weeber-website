@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useHistory, useParams } from 'react-router-dom';
 import { Button, Footer, Header } from '../../components';
 import StudyCases from '../../json/study-cases.json';
@@ -16,6 +17,7 @@ interface StudyCasesData {
   technologies: string[];
   client_logo_path: string;
   client_preview_path: string;
+  client_project: string;
 }
 
 const StudyCaseDetails = () => {
@@ -27,7 +29,8 @@ const StudyCaseDetails = () => {
     summary: '',
     technologies: [],
     client_logo_path: '',
-    client_preview_path: ''
+    client_preview_path: '',
+    client_project: ''
   });
   const { id } = useParams<StudyCaseRouteParam>();
   const history = useHistory();
@@ -44,6 +47,27 @@ const StudyCaseDetails = () => {
 
   return (
     <>
+      <Helmet>
+        <link rel="canonical" href={`https://weeber.id/works/${id}`} />
+        <title>
+          {state.client_project} Case Study -{' '}
+          {state.heading.split('<br />').join(' ')}
+        </title>
+        <meta name="description" content={state.summary} />
+        <meta
+          name="keywords"
+          content="Web Design, Web Development, UI UX Design, Android Development, Full-Stack Developer"
+        />
+        <meta name="author" content="Weeber Indonesia" />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:image"
+          content="https://storages.weeber.id/public/assets/weeber-id.png"
+        />
+        <meta property="og:description" content={state.summary} />
+        <meta property="og:site_name" content="Weeber Indonesia" />
+        <meta property="og:url" content={`https://weeber.id/works/${id}`} />
+      </Helmet>
       <Header />
       <main className="case-details">
         <section className="hero">

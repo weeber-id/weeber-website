@@ -136,7 +136,7 @@
   &__image {
     position: absolute;
 
-    @media only screen and (max-width: 31.25em) {
+    @media only screen and (max-width: 75em) {
       width: 70%;
     }
 
@@ -211,6 +211,10 @@
     align-items: center;
     grid-template-columns: 3rem 100rem 3rem;
     justify-content: center;
+
+    @media only screen and (max-width: 75em) {
+      grid-template-columns: 3rem 70rem 3rem;
+    }
 
     @media only screen and (max-width: 56.25em) {
       grid-template-columns: 3rem 50rem 3rem;

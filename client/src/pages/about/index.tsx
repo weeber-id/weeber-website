@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import {
   IconClients,
   IconGrowth,
@@ -13,6 +14,30 @@ import { Card, Footer, Header, Avatar } from '../../components';
 const About: React.FC = () => {
   return (
     <>
+      <Helmet>
+        <link rel="canonical" href="https://weeber.id/about" />
+        <title>About Weeber - Ready to bring app that your users love</title>
+        <meta
+          name="description"
+          content="We bring a lean, user-centric approach that also solve your business problem to software development through our talented team that have vast experience in Product, UX/UI and Software development."
+        />
+        <meta
+          name="keywords"
+          content="Web Design, Web Development, UI UX Design, Android Development, Full-Stack Developer"
+        />
+        <meta name="author" content="Weeber Indonesia" />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:image"
+          content="https://storages.weeber.id/public/assets/weeber-id.png"
+        />
+        <meta
+          property="og:description"
+          content="We bring a lean, user-centric approach that also solve your business problem to software development through our talented team that have vast experience in Product, UX/UI and Software development."
+        />
+        <meta property="og:site_name" content="Weeber Indonesia" />
+        <meta property="og:url" content="https://weeber.id/about" />
+      </Helmet>
       <Header />
       <section className="about__hero">
         <h1 className="about__heading">Make It Happen.</h1>
