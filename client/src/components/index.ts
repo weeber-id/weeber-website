@@ -6,5 +6,16 @@ import Button from './button';
 import Feature from './feature';
 import Input from './input';
 import TextArea from './textarea';
+import ImageWrapper from './image-wrapper';
 
-export { Header, Card, Footer, Avatar, Button, Feature, Input, TextArea };
+export {
+  Header,
+  Card,
+  Footer,
+  Avatar,
+  Button,
+  Feature,
+  Input,
+  TextArea,
+  ImageWrapper
+};

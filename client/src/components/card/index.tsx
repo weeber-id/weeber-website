@@ -1,4 +1,5 @@
 import React from 'react';
+import { ImageWrapper } from '..';
 import Button from '../button';
 import CardPhilosophy from './card-philosophy';
 import CardWork from './card-work';
@@ -52,7 +53,7 @@ const Card: React.FC<Card> = ({
   return (
     <div className="card">
       <div className="card__img-container">
-        <img src={img} alt={alt} className="card__img" />
+        <ImageWrapper src={img} alt={alt} className="card__img" />
       </div>
       <div className="card__details">
         <h3 className="heading-tertiary">{title}</h3>

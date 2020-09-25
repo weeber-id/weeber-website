@@ -1,4 +1,5 @@
 import React from 'react';
+import { ImageWrapper } from '..';
 import Button from '../button';
 import { Card } from './index';
 
@@ -20,7 +21,7 @@ const CardWork: React.FC<Card> = ({
   return (
     <div {...otherProps} className={cardWorkClassName.join(' ')}>
       <div className="card-work__img-container">
-        <img src={img} alt={alt} className="card-work__img" />
+        <ImageWrapper src={img} alt={alt} className="card-work__img" />
       </div>
       <div className="card-work__details">
         <h2 className="heading-secondary">{title}</h2>
