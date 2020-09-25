@@ -28,7 +28,7 @@ jobs:
 
       - run:
           name: Authentication to Container Registry
-          command: echo $access_token | docker login --username bayu3490
+          command: echo $access_token | docker login --username bayu3490 --password-stdin
 
       - run:
           name: Pushing Docker Image to Container Registry
