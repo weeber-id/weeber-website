@@ -1,5 +1,5 @@
 jobs:
-  build-upload:
+  build-upload-master:
     docker:
       - image: docker:19.03.8
     environment:
