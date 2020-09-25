@@ -36,9 +36,9 @@ jobs:
 
 workflows:
   version: 2
-  build-and-upload:
+  build-and-upload-master:
     jobs:
-      - build-upload:
+      - build-upload-master:
           filters:
             branches:
               only: master
