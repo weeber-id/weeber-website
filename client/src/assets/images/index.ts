@@ -15,6 +15,7 @@ import ImgCaseVokasiConnect from './case-vokasi-connect.png';
 import ImgLandingNextLevelOne from './landing-next-level-1.png';
 import ImgLandingNextLevelTwo from './landing-next-level-2.png';
 import ImgNotFound from './not-found.png';
+import ImgFallbackThankyou from './fallback-thankyou.png';
 
 export {
   ImgAboutHero,
@@ -33,5 +34,6 @@ export {
   ImgCaseVokasiConnect,
   ImgLandingNextLevelOne,
   ImgLandingNextLevelTwo,
-  ImgNotFound
+  ImgNotFound,
+  ImgFallbackThankyou
 };

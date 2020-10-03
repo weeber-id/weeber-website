@@ -2,8 +2,16 @@ import React, { useEffect, useState } from 'react';
 import ReactPixel from 'react-facebook-pixel';
 import ReactGA from 'react-ga';
 import { Helmet } from 'react-helmet';
+import { useHistory } from 'react-router-dom';
 
-import { Button, Footer, Header, Input, TextArea } from '../../components';
+import {
+  Button,
+  Footer,
+  Header,
+  Input,
+  LoadingMessage,
+  TextArea
+} from '../../components';
 
 interface HireUsState {
   projectName: string;
@@ -27,6 +35,8 @@ const HireUs = () => {
     budget: '',
     hearAboutWeeber: ''
   });
+  const [isLoading, setLoading] = useState<boolean>(false);
+  const history = useHistory();
 
   useEffect(() => {
     ReactPixel.track('Contact');
@@ -51,12 +61,14 @@ const HireUs = () => {
       | React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
-
+    setLoading(true);
     ReactPixel.track('Lead');
     ReactGA.event({
       action: 'Hire for project',
       category: 'Client'
     });
+    setLoading(false);
+    history.push('/fallback');
   };
 
   return (
@@ -86,6 +98,7 @@ const HireUs = () => {
         <meta property="og:url" content="https://weeber.id/hire-us" />
       </Helmet>
       <Header />
+      {isLoading && <LoadingMessage />}
       <main className="hire-us">
         <section className="hero">
           <div className="max-width-1200 hero__container">
@@ -105,6 +118,7 @@ const HireUs = () => {
                 type="text"
                 label="What is your company or project name?"
                 name="projectName"
+                required
               />
               <Input
                 value={state.name}
@@ -113,14 +127,16 @@ const HireUs = () => {
                 placeholder="John Doe"
                 type="text"
                 label="What is your name?"
+                required
               />
               <Input
                 value={state.email}
                 onChange={handleChange}
                 name="email"
                 placeholder="john@doe.com"
-                type="text"
+                type="email"
                 label="What is your email address?"
+                required
               />
               <Input
                 value={state.phoneNumber}
@@ -128,7 +144,9 @@ const HireUs = () => {
                 name="phoneNumber"
                 placeholder="+6289xxxx"
                 type="text"
+                pattern="\+?([ -]?\d+)+|\(\d+\)([ -]\d+)"
                 label="What is your phone number?"
+                required
               />
               <div className="consultation__radio-group">
                 <span>What can weeber do for you?</span>
@@ -138,6 +156,7 @@ const HireUs = () => {
                   name="service"
                   label="Create an amazing new product"
                   value="Create an amazing new product"
+                  required
                 />
                 <Input
                   onChange={handleChange}
@@ -145,6 +164,7 @@ const HireUs = () => {
                   name="service"
                   label="Make my great product even greater"
                   value="Make my great product even greater"
+                  required
                 />
                 <Input
                   onChange={handleChange}
@@ -152,6 +172,7 @@ const HireUs = () => {
                   name="service"
                   label="Something else"
                   value="Something else"
+                  required
                 />
               </div>
               <TextArea
@@ -159,6 +180,7 @@ const HireUs = () => {
                 onChange={handleChange}
                 name="serviceDetails"
                 label="Can you tell us little more about that?"
+                required
               />
               <div className="consultation__radio-group">
                 <span>What is your budget?</span>
@@ -168,6 +190,7 @@ const HireUs = () => {
                   name="budget"
                   label="Less than $5,000"
                   value="Less than $5,000"
+                  required
                 />
                 <Input
                   onChange={handleChange}
@@ -175,6 +198,7 @@ const HireUs = () => {
                   name="budget"
                   label="$5,000 - $10,000"
                   value="$5,000 - $10,000"
+                  required
                 />
                 <Input
                   onChange={handleChange}
@@ -182,6 +206,7 @@ const HireUs = () => {
                   name="budget"
                   label="$10,000 - $25,000"
                   value="$10,000 - $25,000"
+                  required
                 />
                 <Input
                   onChange={handleChange}
@@ -189,6 +214,7 @@ const HireUs = () => {
                   name="budget"
                   label="$25,000 - more"
                   value="$25,000 - more"
+                  required
                 />
                 <Input
                   onChange={handleChange}
@@ -196,6 +222,7 @@ const HireUs = () => {
                   name="budget"
                   label="To be determined"
                   value="To be determined"
+                  required
                 />
               </div>
               <Input
@@ -205,10 +232,9 @@ const HireUs = () => {
                 type="text"
                 label="How did you hear about weeber?"
                 name="hearAboutWeeber"
+                required
               />
-              <Button onClick={handleSubmit} color="green">
-                Submit
-              </Button>
+              <Button color="green">Submit</Button>
             </form>
           </div>
         </section>

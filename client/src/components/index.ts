@@ -7,6 +7,7 @@ import Feature from './feature';
 import Input from './input';
 import TextArea from './textarea';
 import ImageWrapper from './image-wrapper';
+import LoadingMessage from './loading-message';
 
 export {
   Header,
@@ -17,5 +18,6 @@ export {
   Feature,
   Input,
   TextArea,
-  ImageWrapper
+  ImageWrapper,
+  LoadingMessage
 };

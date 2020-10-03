@@ -2,7 +2,7 @@ import React from 'react';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
-  type: 'radio' | 'file' | 'text' | 'password';
+  type: 'radio' | 'file' | 'text' | 'password' | 'email' | 'number';
 }
 
 const Input: React.FC<InputProps> = ({
@@ -18,7 +18,13 @@ const Input: React.FC<InputProps> = ({
     return (
       <label className="radio">
         <span className="radio__input">
-          <input {...otherProps} value={value} type="radio" name={name} />
+          <input
+            required={required}
+            {...otherProps}
+            value={value}
+            type="radio"
+            name={name}
+          />
           <span className="radio__control"></span>
         </span>
         <span className="radio__label">{label}</span>
@@ -32,7 +38,7 @@ const Input: React.FC<InputProps> = ({
       <input
         {...otherProps}
         className="input__input"
-        type="text"
+        type={type}
         value={value}
         placeholder={placeholder}
         required={required}
