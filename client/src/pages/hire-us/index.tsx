@@ -12,28 +12,29 @@ import {
   LoadingMessage,
   TextArea
 } from '../../components';
+import { urlServer } from '../../utils/urlServer';
 
 interface HireUsState {
-  projectName: string;
+  project_name: string;
   name: string;
   email: string;
-  phoneNumber: string;
-  service: string;
-  serviceDetails: string;
+  phone_number: string;
+  weeber_doing: string;
+  about_project: string;
   budget: string;
-  hearAboutWeeber: string;
+  know_weeber_from: string;
 }
 
 const HireUs = () => {
   const [state, setState] = useState<HireUsState>({
-    projectName: '',
+    project_name: '',
     name: '',
     email: '',
-    phoneNumber: '',
-    service: '',
-    serviceDetails: '',
+    phone_number: '',
+    weeber_doing: '',
+    about_project: '',
     budget: '',
-    hearAboutWeeber: ''
+    know_weeber_from: ''
   });
   const [isLoading, setLoading] = useState<boolean>(false);
   const history = useHistory();
@@ -55,20 +56,58 @@ const HireUs = () => {
     });
   };
 
-  const handleSubmit = (
+  const handleSubmit = async (
     e:
       | React.MouseEvent<HTMLElement, MouseEvent>
       | React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
     setLoading(true);
-    ReactPixel.track('Lead');
-    ReactGA.event({
+    const ReactGAEvent: ReactGA.EventArgs = {
       action: 'Hire for project',
-      category: 'Client'
+      category: 'Client',
+      value: 0
+    };
+
+    if (state.budget === 'Less than $5,000') {
+      ReactGAEvent.value = 5000;
+    }
+
+    if (state.budget === '$5,000 - $10,000') {
+      ReactGAEvent.value = 9999;
+    }
+
+    if (state.budget === '$10,000 - $25,000') {
+      ReactGAEvent.value = 24999;
+    }
+
+    if (state.budget === '$25,000 - more') {
+      ReactGAEvent.value = 25001;
+    }
+
+    ReactPixel.track('Lead');
+    ReactGA.event(ReactGAEvent);
+
+    const res = await fetch(`${urlServer}/contact-us`, {
+      method: 'POST',
+      body: JSON.stringify(state)
     });
     setLoading(false);
-    history.push('/fallback');
+
+    if (res.status.toString().startsWith('2')) {
+      setState({
+        project_name: '',
+        name: '',
+        email: '',
+        phone_number: '',
+        weeber_doing: '',
+        about_project: '',
+        budget: '',
+        know_weeber_from: ''
+      });
+
+      history.push('/fallback');
+    }
   };
 
   return (
@@ -112,12 +151,12 @@ const HireUs = () => {
           <div className="form__container max-width-1200">
             <form onSubmit={handleSubmit} className="consultation">
               <Input
-                value={state.projectName}
+                value={state.project_name}
                 onChange={handleChange}
                 placeholder="Phoenix Project"
                 type="text"
                 label="What is your company or project name?"
-                name="projectName"
+                name="project_name"
                 required
               />
               <Input
@@ -139,9 +178,9 @@ const HireUs = () => {
                 required
               />
               <Input
-                value={state.phoneNumber}
+                value={state.phone_number}
                 onChange={handleChange}
-                name="phoneNumber"
+                name="phone_number"
                 placeholder="+6289xxxx"
                 type="text"
                 pattern="\+?([ -]?\d+)+|\(\d+\)([ -]\d+)"
@@ -153,7 +192,7 @@ const HireUs = () => {
                 <Input
                   onChange={handleChange}
                   type="radio"
-                  name="service"
+                  name="weeber_doing"
                   label="Create an amazing new product"
                   value="Create an amazing new product"
                   required
@@ -161,7 +200,7 @@ const HireUs = () => {
                 <Input
                   onChange={handleChange}
                   type="radio"
-                  name="service"
+                  name="weeber_doing"
                   label="Make my great product even greater"
                   value="Make my great product even greater"
                   required
@@ -169,16 +208,16 @@ const HireUs = () => {
                 <Input
                   onChange={handleChange}
                   type="radio"
-                  name="service"
+                  name="weeber_doing"
                   label="Something else"
                   value="Something else"
                   required
                 />
               </div>
               <TextArea
-                value={state.serviceDetails}
+                value={state.about_project}
                 onChange={handleChange}
-                name="serviceDetails"
+                name="about_project"
                 label="Can you tell us little more about that?"
                 required
               />
@@ -226,12 +265,12 @@ const HireUs = () => {
                 />
               </div>
               <Input
-                value={state.hearAboutWeeber}
+                value={state.know_weeber_from}
                 onChange={handleChange}
                 placeholder="Instagram, Linkedin, etc"
                 type="text"
                 label="How did you hear about weeber?"
-                name="hearAboutWeeber"
+                name="know_weeber_from"
                 required
               />
               <Button color="green">Submit</Button>

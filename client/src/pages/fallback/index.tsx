@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImgFallbackThankyou, ImgNotFound } from '../../assets';
+import { ImgFallbackThankyou } from '../../assets';
 import { Button, Footer, Header, ImageWrapper } from '../../components';
 
 const FallbackPage = () => {
