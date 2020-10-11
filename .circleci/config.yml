@@ -19,7 +19,9 @@ jobs:
             
       - run:
           name: Build Docker Image
-          command: docker build -t $IMAGE_NAME .
+          command: |
+            source $BASH_ENV
+            docker build -t $IMAGE_NAME .
 
       - run:
           name: Run Test Docker Container
