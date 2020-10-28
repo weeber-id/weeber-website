@@ -1,0 +1,51 @@
+.link-tree-page {
+  padding: 4rem 2rem;
+
+  .title {
+    text-align: center;
+    display: block;
+    margin-bottom: 4rem;
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  .logo-wrapper {
+    background-color: var(--color-white);
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 12rem;
+
+    .logo {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+}
+
+.link-tree {
+  color: var(--color-white);
+  list-style: none;
+  border: 2px solid var(--color-red);
+  text-align: center;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-weight: 700;
+  max-width: 100rem;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-red);
+      color: var(--color-white);
+    }
+  }
+}
