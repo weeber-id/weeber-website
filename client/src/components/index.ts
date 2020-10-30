@@ -8,6 +8,7 @@ import Input from './input';
 import TextArea from './textarea';
 import ImageWrapper from './image-wrapper';
 import LoadingMessage from './loading-message';
+import LinkTreeList from './link-tree-list';
 
 export {
   Header,
@@ -19,5 +20,6 @@ export {
   Input,
   TextArea,
   ImageWrapper,
-  LoadingMessage
+  LoadingMessage,
+  LinkTreeList
 };
