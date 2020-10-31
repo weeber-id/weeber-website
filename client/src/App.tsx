@@ -9,7 +9,9 @@ import {
   NotFound,
   StudyCase,
   StudyCaseDetails,
-  FallbackPage
+  FallbackPage,
+  LinkTree,
+  RedirectPage
 } from './pages';
 import 'swiper/swiper.scss';
 import { Helmet } from 'react-helmet';
@@ -65,6 +67,8 @@ function App() {
         <Route path="/works" exact component={StudyCase} />
         <Route path="/works/:id" exact component={StudyCaseDetails} />
         <Route path="/fallback" exact component={FallbackPage} />
+        <Route path="/link-tree" exact component={LinkTree} />
+        <Route path="/redirect" exact component={RedirectPage} />
         <Route component={NotFound} />
       </Switch>
     </div>

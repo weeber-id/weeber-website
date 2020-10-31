@@ -1,0 +1,33 @@
+.link-tree-page {
+  padding: 4rem 2rem;
+
+  .loading-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .title {
+    text-align: center;
+    display: block;
+    margin-bottom: 4rem;
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  .logo-wrapper {
+    background-color: var(--color-white);
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 12rem;
+
+    .logo {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+}

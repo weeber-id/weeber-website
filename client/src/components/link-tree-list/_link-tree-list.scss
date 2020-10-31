@@ -1,0 +1,32 @@
+.link-tree {
+  color: var(--color-white);
+  list-style: none;
+  border: 2px solid var(--color-red);
+  text-align: center;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-weight: 700;
+  max-width: 100rem;
+  margin: 0 auto;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-red);
+      color: var(--color-white);
+    }
+  }
+}
+
+.link-tree-link {
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &:visited,
+  &:link {
+    color: var(--color-white);
+    text-decoration: none;
+  }
+}

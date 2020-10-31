@@ -5,6 +5,8 @@ import StudyCaseDetails from './study-case-details';
 import StudyCase from './study-case';
 import NotFound from './not-found';
 import FallbackPage from './fallback';
+import LinkTree from './link-tree';
+import RedirectPage from './redirect';
 
 export {
   About,
@@ -13,5 +15,7 @@ export {
   StudyCaseDetails,
   StudyCase,
   NotFound,
-  FallbackPage
+  FallbackPage,
+  LinkTree,
+  RedirectPage
 };
