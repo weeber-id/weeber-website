@@ -1,6 +1,11 @@
 .link-tree-page {
   padding: 4rem 2rem;
 
+  .loading-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
   .title {
     text-align: center;
     display: block;
