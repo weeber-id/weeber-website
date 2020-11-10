@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import ReactPixel from 'react-facebook-pixel';
 import { useQuery } from '../../utils/use-query';
+import { Helmet } from 'react-helmet';
 
 const RedirectPage = () => {
   const url = useQuery().get('url');
@@ -34,29 +35,34 @@ const RedirectPage = () => {
   }, [url, fb_event, GA_event_category, GA_event_action, text]);
 
   return (
-    <div className="redirecting">
-      <div className="body-wrapper">
-        <div className="body">
-          <span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          <div className="base">
-            <span></span>
-            <div className="face"></div>
+    <>
+      <Helmet>
+        <title>Redirecting to {url}</title>
+      </Helmet>
+      <div className="redirecting">
+        <div className="body-wrapper">
+          <div className="body">
+            <span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <div className="base">
+              <span></span>
+              <div className="face"></div>
+            </div>
           </div>
         </div>
+        <div className="longfazers">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <h1>Redirecting ...</h1>
       </div>
-      <div className="longfazers">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <h1>Redirecting ...</h1>
-    </div>
+    </>
   );
 };
 
